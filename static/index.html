@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Find movies similar to the ones you already enjoy." />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <title>Frame — Movie recommendations</title>
+  </head>
+  <body>
+    <main>
+      <nav aria-label="Main navigation">
+        <a class="brand" href="/" aria-label="Frame home">FRAME<span>·</span></a>
+        <a class="api-link" href="/docs" target="_blank" rel="noreferrer">API docs ↗</a>
+      </nav>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">MOVIE DISCOVERY</p>
+        <h1 id="page-title">Start with the<br />film you likes.</h1>
+        <p class="lede">Search the catalogue, select a title, and get films with a similar mood, subject, and genre.</p>
+      </section>
+
+      <section class="search-panel" aria-label="Find a movie">
+        <label for="movie-search">Search by title</label>
+        <div class="search-row">
+          <input id="movie-search" type="search" placeholder="Try a movie" autocomplete="off" />
+          <button id="recommend-button" type="button" disabled>Find similar</button>
+        </div>
+        <div class="recommendation-count">
+          <label for="recommendation-limit">How many suggestions?</label>
+          <select id="recommendation-limit">
+            <option value="3">3 films</option>
+            <option value="5" selected>5 films</option>
+            <option value="8">8 films</option>
+            <option value="10">10 films</option>
+          </select>
+        </div>
+        <div id="search-status" class="search-status" aria-live="polite"></div>
+        <ul id="search-results" class="search-results" aria-label="Search results"></ul>
+      </section>
+
+      <section id="recommendations-section" class="recommendations" hidden aria-labelledby="recommendations-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">RECOMMENDATIONS</p>
+            <h2 id="recommendations-title">Because you chose <span id="selected-title"></span></h2>
+          </div>
+          <button id="change-movie" class="text-button" type="button">Change film</button>
+        </div>
+        <div id="recommendation-status" aria-live="polite"></div>
+        <div id="recommendation-grid" class="recommendation-grid"></div>
+      </section>
+    </main>
+
+    <footer>Built around a little cosine similarity.</footer>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
