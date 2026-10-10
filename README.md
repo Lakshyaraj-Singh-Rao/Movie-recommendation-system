@@ -66,7 +66,7 @@ Start the application:
 fastapi dev api.py
 ```
 
-Open the app at [http://127.0.0.1:8000](http://127.0.0.1:8000). Interactive API documentation is available at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
+Open the app at [Movie Recommendation System](https://movie-recommendation-system-75z0.onrender.com/). Interactive API documentation is available at [the deployed API documentation](https://movie-recommendation-system-75z0.onrender.com/docs).
 
 ## API endpoints
 
